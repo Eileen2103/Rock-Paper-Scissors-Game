@@ -2,10 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /*
-    overflow-x: hidden;
-    overflow-y: hidden; */
-
 }
 
 body {
@@ -16,19 +12,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Dikeyde ortalama */
     align-items: center;
-    /* Yatayda ortalama */
     width: 70%;
-    /* İsteğe göre genişlik */
     margin: 20px auto;
-
-    /* Sayfanın ortasında hizalama */
-    background-color: aliceblue;
+    background-color: rgb(237, 198, 237);
     padding: 20px;
-    /* İç boşluk */
     border-radius: 10px;
-    /* Köşeleri yuvarlatma (isteğe bağlı) */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 
 }
@@ -56,28 +45,6 @@ body {
     gap: 10px;
 }
 
-
-
-
-
-.columnContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: auto;
-    padding: 5px;
-}
-
-.rowContainer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    width: auto;
-    padding: 5px;
-}
-
-
-
 .header_style {
     font-size: 55px;
     font-weight: 400;
@@ -100,7 +67,7 @@ body {
     font-size: 30px;
     font-weight: 600;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    color: rgb(69, 8, 69)[];
+    color: rgb(69, 8, 69);
     margin-bottom: 5px;
 }
 
@@ -108,17 +75,37 @@ body {
     width: auto;
     padding: 10px;
     font-size: 20px;
-    font-weight: 100;
+    font-weight: 300;
     text-align: center;
     border-radius: 10px;
     cursor: pointer;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     color: black;
+    background-color: rgb(251, 198, 251);
+}
 
+@media screen and(max-width:400px) {
+
+    .main_container {
+        width: 65%;
+    }
 
 }
 
-/*button:hover {
-    cursor: grab;
-} */
+@media screen and(max-width:600) {
+
+    .main_container {
+        width: 70%;
+    }
+
+}
+
+@media screen and (max-width:992px) {
+
+
+    .main_container {
+        width: 75%;
+    }
+
+}
