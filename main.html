@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0; ">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image" href="images/rock-paper-scissors.png">
+    <title>Rock Paper Scissors</title>
+</head>
+
+<body>
+
+    <div class="main_container">
+        <h1 class="header_style"> ROCK & PAPER & SCISSORS GAME</h1>
+        <p class="subTitles">Choose your move below</p>
+
+        <div class="button_container">
+            <button onclick="player('0')" class="option_buttons" style="background: url(images/rock.png); ">
+                ROCK </button>
+            <button onclick="player('1')" class="option_buttons" style="background: url(images/paper.png);">
+                PAPER</button>
+            <button onclick="player('2')" class="option_buttons" style="background:  url(images/scissors.png);">
+                SCISSORS</button>
+        </div>
+        <div class="result_container">
+            <div class="result_column">
+                <h2 class="subTitles"> Computers choice: </h2>
+                <div class="answer_titles" id="computer"></div>
+            </div>
+            <div class="result_column"></div>
+            <h3 class="subTitles">Your choice: </h3>
+            <div class="answer_titles" id="user"></div>
+        </div>
+        <div class="result_column"></div>
+        <h4 class="subTitles">Result: </h4>
+        <div class="answer_titles" id="result"></div>
+    </div>
+    </div>
+    <script>
+
+        const resultMap = [
+            ['t', 'u', 'c'],
+            ['c', 't', 'u'],
+            ['u', 'c', 't']
+        ];
+        const finalResults = {
+            't': "It's a Tie!",
+            'c': "Computer Wins!",
+            'u': "You win!"
+        };
+        const inputValues = {
+            '0': "Rock",
+            '1': "Paper",
+            '2': "Scissors"
+        }
+
+
+        function computer() {
+            let computerResult = Math.floor(Math.random() * 3);
+            return computerResult;
+        }
+
+        function player(playerOption) {
+            console.log("Player function started with option:", playerOption);
+            const computerChoice = computer();
+            console.log("Computer choice:", computerChoice);
+            const userChoice = parseInt(playerOption);
+            console.log("User choice:", userChoice);
+
+            const finalResult = resultMap[computerChoice][userChoice];
+            console.log("Final result:", finalResult);
+            const finalMessage = finalResults[finalResult];
+            const userChoiceString = inputValues[userChoice];
+            const computerChoiceString = inputValues[computerChoice];
+            divMessage("result", finalMessage);
+            divMessage("user", userChoiceString);
+            divMessage("computer", computerChoiceString);
+
+        }
+        function divMessage(divName, message) {
+            const resultDiv = document.getElementById(divName);
+            resultDiv.innerText = message;
+        }
+
+    </script>
+</body>
+
+</html>
